@@ -5,8 +5,8 @@
 - 창업 의사결정 지원
 데이터는 필터와 차트를 이용해 사용자에게 보기쉽게 제공됩니다.
 창업을 고려 중인 사용자는 제공된 데이터를 이용해 보다 객관적인 상권 분석을 할 수 있습니다.
-![Untitled](README/Untitled 3.png)
-![Untitled](README/Untitled 2.png)
+![Untitled](README/Untitled_3.png)
+![Untitled](README/Untitled_2.png)
 
 
 # 프로젝트 구조
