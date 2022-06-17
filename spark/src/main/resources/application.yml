@@ -1,0 +1,19 @@
+hdfs:
+  configuration:
+    server: hdfs://localhost:54310/
+    user: j6e104
+
+server:
+  port: 58080
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore/cert.p12
+    key-store-password: 122333
+  address: 0.0.0.0
+  servlet:
+    contextPath: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

@@ -1,0 +1,81 @@
+server:
+  port: 8123
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: changmoonTLS/cert.p12
+    key-store-password: 122333
+  address: 0.0.0.0
+  servlet:
+    contextPath: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+###### jwt ######
+jwt:
+  header: Authorization
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
+
+###### spring Jpa config #####
+
+---
+#### local ####
+spring:
+  profiles: local
+    #active: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/window?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      username: root
+      password: 122333
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+        show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+---
+
+#### deploy ####
+spring:
+  profiles:
+    active: prod
+  datasource:
+#    url: jdbc:mysql://j6e104.p.ssafy.io:3306/window?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://j6e104.p.ssafy.io:3306/window_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      username: root1
+      password: root1
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+        show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+
+
+
+
