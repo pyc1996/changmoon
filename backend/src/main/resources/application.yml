@@ -4,7 +4,7 @@ server:
     enabled: true
     key-store-type: PKCS12
     key-store: changmoonTLS/cert.p12
-    key-store-password: 122333
+    key-store-password: {password}
   address: 0.0.0.0
   servlet:
     contextPath: /
@@ -16,7 +16,7 @@ server:
 ###### jwt ######
 jwt:
   header: Authorization
-  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
+  secret: {jwt_secret}
 
 ###### spring Jpa config #####
 
@@ -26,7 +26,7 @@ spring:
   profiles: local
     #active: local
   datasource:
-    url: jdbc:mysql://localhost:3306/window?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: {db_url}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       username: root
@@ -53,8 +53,8 @@ spring:
   profiles:
     active: prod
   datasource:
-#    url: jdbc:mysql://j6e104.p.ssafy.io:3306/window?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    url: jdbc:mysql://j6e104.p.ssafy.io:3306/window_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true
+#    url:  {db_url}
+    url: j {db_url}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       username: root1
