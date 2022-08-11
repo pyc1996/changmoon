@@ -14,9 +14,9 @@
 ![Untitled](README/architecture.png)
 
 위와 같은 Hadoop Ecosystem을 구축하였습니다.
-분산처리의 핵심인 Hadoop은 2버전을 사용하여 HDFS, MapReduce, Yarn으로 구성됩니다.~
+분산처리의 핵심인 Hadoop은 2버전을 사용하여 HDFS, MapReduce, Yarn으로 구성됩니다.
 
-Spark는 MapReduce로 변환해준다.~
+Spark는 MapReduce로 변환해준다.
 
 Sqoop RDBMS에 있던 데이터를 HDFS에 넣어준다.
 
